@@ -32,7 +32,7 @@ page('','Códigos de error de lavarropas y aires acondicionados (Drean, Longvie,
 <p>Qué significa cada código según el <strong>manual oficial</strong> del fabricante, qué podés revisar vos sin riesgo y cuándo llamar al service. Cada página enlaza el manual del que sale la información. Si un código no está en el manual, lo decimos.</p>
 <h2>Lavarropas</h2>
 <ul class="cards">
-<li><a href="/drean-next-codigos-de-error/">Drean Next: tabla de códigos de error (Er 1 a Er 11, error 6)</a></li>
+<li><a href="/drean-next-error-6/">Drean Next: tabla de códigos de error (Er 1 a Er 11, error 6)</a></li>
 <li><a href="/longvie-lavarropas-error-e20/">Longvie lavarropas error E20: qué dice el manual oficial</a></li>
 </ul>
 <h2>Aire acondicionado</h2>
@@ -40,7 +40,7 @@ page('','Códigos de error de lavarropas y aires acondicionados (Drean, Longvie,
 <li><a href="/bgh-aire-acondicionado-codigos-de-error/">Aire acondicionado BGH: qué significa "CF" y tabla de códigos de error</a></li>
 </ul>''',back=False)
 
-page('drean-next-codigos-de-error/','Drean Next error 6 (Er 6 / E6): tabla de códigos de error del manual',
+page('drean-next-error-6/','Drean Next error 6 (Er 6 / E6): tabla de códigos de error del manual',
 'Qué significa el error 6 del lavarropas Drean Next (Er 6, E6A, E6b, E6C) y la tabla completa de códigos Er 1 a Er 11 según el manual oficial de Drean.',
 f'''<h1>Drean Next: error 6 y tabla de códigos de error</h1>
 <div class="box"><strong>Respuesta corta:</strong> en el Drean Next, el <span class="code">Er 6</span> (o <span class="code">E6</span>, y en algunos modelos <span class="code">Er 6A</span>, <span class="code">Er 6b</span>, <span class="code">Er 6C</span>) significa <strong>"problema en el motor de lavado"</strong>. Para este código el manual oficial indica <strong>llamar al Servicio Técnico</strong>; no trae una solución casera.</div>
