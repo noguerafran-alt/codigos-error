@@ -10,3 +10,7 @@ th,td{border:1px solid #ddd;padding:8px;text-align:left;vertical-align:top}th{ba
 footer{font-size:.85rem;color:#555;border-top:1px solid #ddd;margin-top:2.5em;padding-top:12px;padding-bottom:30px}
 ul.cards li{margin:.5em 0}
 @media(max-width:560px){body{font-size:16px}h1{font-size:1.4rem}th,td{padding:6px}}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0}
+.tw table{min-width:520px;margin:0}
+.crumb{font-size:.9em}
+.rev{font-size:.85em;color:#555;margin:.2em 0 1em}
