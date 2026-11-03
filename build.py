@@ -53,7 +53,9 @@ AYUDA='https://www.bgh.com.ar/institucional/ayuda'
 DST='https://drean.com.ar/servicio_tecnico'
 DFAQ='https://drean.com.ar/es_AR/preguntasfrecuentes'
 DEXP='https://drean.com.ar/es_AR/servicio-express'
-P0='2026-10-23'; M='2026-10-27'
+P0='2026-10-23'; M='2026-10-27'; N='2026-11-03'
+C505='https://drean.com.ar/medias/Manual-Concept-5.05.pdf?context=bWFzdGVyfGltYWdlc3w5MDc1ODh8YXBwbGljYXRpb24vcGRmfGFHTmtMMmc0T1M4eE1UUTRNamt3TmpNMk1UZzROaTlOWVc1MVlXd3RRMjl1WTJWd2RDMDFMakExTG5Ca1pnfDA2MmRkZmYyNTIwZjRjMjZlNGI0MTJlNWVhMDU0OTg3MTI0N2Q2ZGNiMWJkMzRlNjRjODMzOWNkNzFkZDA2YjM'
+C505B='https://blog.drean.com.ar/manual-de-lavarropas-drean-concept-505v1/'
 
 page('','Códigos de error de lavarropas y aires acondicionados (Drean, Longvie, BGH)',
 'Guía independiente de códigos de error de lavarropas Drean y Longvie y aires acondicionados BGH, transcriptos de los manuales oficiales con la fuente enlazada.',
@@ -64,6 +66,10 @@ page('','Códigos de error de lavarropas y aires acondicionados (Drean, Longvie,
 <li><a href="/drean-next-error-6/">Drean Next error 6 (Er 6, E6) y códigos de error del manual</a></li>
 <li><a href="/longvie-lavarropas-error-e03/">Longvie lavarropas error 3 (E03): no desagota, y tabla de errores</a></li>
 <li><a href="/longvie-lavarropas-error-e20/">Longvie lavarropas error E20: qué dice el manual oficial</a></li>
+</ul>
+<h2>Repuestos y fallas comunes</h2>
+<ul class="cards">
+<li><a href="/drean-concept-5-05-v1-bomba-de-desagote/">Drean Concept 5.05 V1 no desagota: ¿es la bomba de desagote?</a></li>
 </ul>
 <h2>Aire acondicionado</h2>
 <ul class="cards">
@@ -135,7 +141,7 @@ f'''<h1>Servicio técnico oficial Drean: teléfonos, WhatsApp y horarios</h1>
 <ul>
 <li>El <strong>modelo</strong> del equipo, tal como figura en su etiqueta.</li>
 <li>La <strong>factura o ticket de compra original</strong>: Drean pide conservarlo para usar la garantía de fábrica.</li>
-<li>El <strong>código de error</strong> que muestra el equipo. Si es un Drean Next, buscalo en la <a href="/drean-next-error-6/">tabla de códigos del Drean Next</a>.</li>
+<li>El <strong>código de error</strong> que muestra el equipo. Si es un Drean Next, buscalo en la <a href="/drean-next-error-6/">tabla de códigos del Drean Next</a>; si es un Concept 5.05 V1 que no desagota, mirá <a href="/drean-concept-5-05-v1-bomba-de-desagote/">qué revisar antes de cambiar la bomba</a>.</li>
 </ul>
 <h2>¿Hace falta llamar?</h2>
 <p>Si el código tiene una revisión casera en el manual (por ejemplo, filtros o mangueras en los errores 1 y 2 del Next), probala primero con el equipo desenchufado. Si el equipo está en garantía, no lo abras: llamá directamente.</p>
@@ -158,7 +164,7 @@ f'''<h1>Servicio técnico oficial Drean: teléfonos, WhatsApp y horarios</h1>
 <a href="{DST}" rel="nofollow">Servicio Drean: servicio técnico especializado</a> (canales, horario y 90 días de garantía en reparaciones).<br>
 <a href="{DFAQ}" rel="nofollow">Preguntas frecuentes Drean</a> (garantía de 12 meses, factura y pedido de manuales).<br>
 <a href="{DEXP}" rel="nofollow">Servicio express Drean</a> (solo Capital Federal).</p>''',
-crumb='Servicio técnico Drean',pub=M,mod=M,faq=[
+crumb='Servicio técnico Drean',pub=M,mod=N,faq=[
 ('¿Cuál es el teléfono del servicio técnico Drean en el interior?','Según drean.com.ar, el 0800-345-6580. Para CABA y GBA es el (011) 5246-8663.'),
 ('¿Drean tiene WhatsApp para el service?','Sí. drean.com.ar publica el WhatsApp 11 5023-7973 en los datos del servicio técnico.'),
 ('¿Qué horario tiene el service Drean?','Lunes a viernes de 9 a 19:30 y sábados de 9 a 14, según drean.com.ar.'),
@@ -294,3 +300,65 @@ crumb='Aire BGH error CF',pub=P0,mod=M,faq=[
 ('¿Qué significa EC en un aire BGH?','En los Silent Air WCCR/WFCR, EC es error de refrigerante: fuga de refrigerante. Es trabajo del service.'),
 ('¿Puedo arreglar el código de falla yo?','No. BGH aclara que los códigos de falla son para el servicio técnico especializado y que no intentes repararlo vos.'),
 ('¿Cuál es el teléfono del service BGH?','El servicio técnico de Climatización de BGH es el 0810-222-1244, según bgh.com.ar.')])
+
+page('drean-concept-5-05-v1-bomba-de-desagote/','Bomba de desagote Drean Concept 5.05 V1: falla y repuesto',
+'¿Tu Drean Concept 5.05 V1 no desagota? Qué revisar antes de culpar a la bomba, cómo buscar el repuesto compatible y cuándo llamar al service.',
+f'''<h1>Bomba de desagote del Drean Concept 5.05 V1: cómo saber si falla y qué repuesto buscar</h1>
+<div class="box"><strong>Respuesta corta:</strong> si tu Drean Concept 5.05 V1 no desagota, antes de comprar una bomba revisá lo que indica el manual oficial: que la <strong>manguera de desagote</strong> no esté doblada ni obstruida, que esté colocada a una altura de <strong>entre 70 y 90 cm</strong> del piso y que no tenga una prolongación. Si el lavarropas sigue sin desagotar, que el service confirme si es la bomba. Recién ahí buscá el repuesto.</div>
+<div class="box warn">Agua y 220 V: desenchufá el lavarropas y cerrá la canilla antes de tocar nada. La bomba es una pieza eléctrica dentro del gabinete: no lo abras. Según el manual, la manipulación interna la tiene que hacer el service oficial para conservar la garantía.</div>
+<h2>Síntomas de que el problema está en el desagote</h2>
+<p>El agua queda en la cuba, no centrifuga o el lavarropas se detiene con agua. El Concept 5.05 V1 no tiene display con números: avisa las fallas con combinaciones de luces (LED) del panel. Según la tabla "Detección de averías" del manual:</p>
+<table>
+<tr><th>Luces encendidas</th><th>Posibles causas (manual Drean)</th><th>Qué indica el manual</th></tr>
+<tr><td class="code">Algodón EEE + Plancha fácil + 1/2 Carga</td><td>Manguera de desagote obstruida o mal ubicada</td><td>Al presionar Inicio, intenta la operación de nuevo. Para salir del modo error, mantené apretado Encendido/Apagado.</td></tr>
+<tr><td class="code">ECO Rápido + Plancha fácil + 1/2 Carga</td><td>Pérdida de agua o mala ubicación de la manguera de desagote</td><td>No se puede reiniciar. Para salir del modo error, mantené apretado Encendido/Apagado.</td></tr>
+<tr><td class="code">Algodón + Plancha fácil + 1/2 Carga</td><td>Sin agua o grifo cerrado, caudal deficiente, electroválvula tapada o que no funciona</td><td>Es un problema de carga de agua, no de desagote.</td></tr>
+<tr><td class="code">Lana + Plancha fácil + 1/2 Carga</td><td>Problemas en el sensor de nivel de agua</td><td>No se puede reiniciar. Para salir, mantené apretado Encendido/Apagado.</td></tr>
+<tr><td class="code">Enjuague / Centrifugado + Plancha fácil + 1/2 Carga</td><td>Tapa abierta o mal cerrada</td><td>Cerrar la tapa.</td></tr>
+</table>
+<p>El manual pide no desenchufarlo ni apagarlo antes de leer la tabla, anotar qué luces viste y, si después de revisar las causas el problema sigue, llamar al Servicio de Asistencia Técnica.</p>
+<h3>¿Tenés activada la función Plancha fácil?</h3>
+<p>No es una falla: con <strong>Plancha fácil</strong> activada, el lavarropas se detiene con el agua del último enjuague y deja titilando las luces de Plancha fácil y Centrifugado. Según el manual, si presionás Inicio/Pausa desagota sin centrifugar, y si presionás el selector Antiarrugas sigue con el desagote y el centrifugado.</p>
+<h2>Qué revisar antes de comprar una bomba</h2>
+<p>Con el equipo desenchufado, revisá lo que el manual indica para la manguera de descarga:</p>
+<ul>
+<li>Que no quede doblada en ángulo: eso provoca una obstrucción.</li>
+<li>Que esté entre <strong>70 y 90 cm</strong> de altura respecto del piso.</li>
+<li>Que el conducto de desagüe tenga más diámetro que la manguera (mínimo 4 cm), para evitar el efecto sifón.</li>
+<li>Que no tenga una manguera de prolongación: el manual dice que no se use.</li>
+<li>Si va a una pileta, que esté sujeta de manera estable.</li>
+</ul>
+<h3>¿Dónde está el filtro del Concept 5.05 V1?</h3>
+<p>El manual describe un <strong>filtro de pelusas ubicado en el recirculador de agua</strong>, dentro de la cuba: se retira destrabándolo desde arriba, se le sacan las pelusas, se lava bajo la canilla y se vuelve a colocar. El manual recomienda revisarlo y limpiarlo de forma periódica. No describe un filtro de bomba que se abra desde afuera, así que no abras el gabinete para buscarlo.</p>
+<h2>Cuándo puede ser la bomba (y quién lo confirma)</h2>
+<p>Si la manguera está bien ubicada, sin dobleces, y la falla de desagote sigue, el manual indica llamar al Servicio de Asistencia Técnica. No hagas diagnóstico casero con tester: la bomba está conectada a 220 V dentro del gabinete. Que un técnico confirme que es la bomba antes de comprar un repuesto.</p>
+<h2>Qué bomba de desagote es compatible con el Concept 5.05 V1</h2>
+<p>El manual oficial <strong>no indica el código ni la marca de la bomba</strong>, y Drean no lo publica en su sitio. Por eso no te vamos a recomendar un modelo. Según <a href="{DST}" rel="nofollow">drean.com.ar/servicio_tecnico</a>, el service oficial trabaja con repuestos genuinos y da 90 días de garantía en sus reparaciones. Si igual vas a comprar el repuesto por tu cuenta, antes chequeá:</p>
+<ul>
+<li>El modelo exacto, tal como figura en la placa de características (en la parte trasera del producto, según el manual).</li>
+<li>Que la tensión sea la del equipo: el manual indica 220 V - 50 Hz.</li>
+<li>Que la forma de fijación y el conector sean iguales a los de la pieza original.</li>
+<li>Si es original o alternativa: pedile al vendedor que confirme la compatibilidad con tu modelo exacto.</li>
+</ul>
+<h2>¿La cambio yo o llamo al service?</h2>
+<ul>
+<li><strong>Vos:</strong> revisar la manguera de desagote y limpiar el filtro de pelusas, como indica el manual.</li>
+<li><strong>Service:</strong> si el equipo está en garantía (no lo abras), para cambiar la bomba, y si la bomba arranca sola al enchufar, salta la térmica o hay olor a quemado.</li>
+</ul>
+<h2>La bomba no para nunca (está siempre prendida)</h2>
+<p>El manual no cubre ese caso. Si la bomba arranca sola al enchufar el lavarropas, no compres repuestos: llamá al service.</p>
+<h2>Service oficial Drean</h2>
+<p>Teléfonos que figuran en el manual: <strong>CABA y GBA (011) 5246-8663</strong> e <strong>interior 0800-345-6580</strong>. WhatsApp, horarios y garantía, en <a href="/servicio-tecnico-drean/">servicio técnico oficial Drean</a>. Otros códigos de la marca: <a href="/drean-next-error-6/">códigos de error Drean Next</a>. Si tenés un Longvie que no desagota: <a href="/longvie-lavarropas-error-e03/">Longvie error 3</a>.</p>
+<p class="src"><strong>Fuentes (oficiales, Drean):</strong><br>
+<a href="{C505}" rel="nofollow">Manual de instrucciones Drean Concept 5.05 V1 (drean.com.ar)</a>: instalación de la manguera de descarga (pág. 6 y 7), Plancha fácil (pág. 10), limpieza del filtro de pelusas (pág. 14), medidas de seguridad (pág. 15), detección de averías (pág. 18) y certificado de garantía (pág. 21).<br>
+<a href="{C505B}" rel="nofollow">Manual de Lavarropas Drean Concept 505v1 (blog.drean.com.ar)</a>.<br>
+<a href="{DST}" rel="nofollow">Servicio técnico Drean</a> (repuestos genuinos y 90 días de garantía en reparaciones).</p>''',
+crumb='Drean Concept 5.05 V1: bomba de desagote',pub=N,mod=N,faq=[
+('¿Cómo sé si la bomba de desagote de mi Drean Concept está rota?','Primero descartá la manguera: según el manual, tiene que estar sin dobleces, a entre 70 y 90 cm del piso y sin prolongación. Si sigue sin desagotar, el manual indica llamar al service, que es quien confirma si es la bomba.'),
+('¿Qué luces muestra el Concept 5.05 V1 cuando no desagota?','Según el manual, Algodón EEE + Plancha fácil + 1/2 Carga indican manguera de desagote obstruida o mal ubicada. Al presionar Inicio intenta de nuevo.'),
+('¿Qué bomba lleva el Drean Concept 5.05 V1?','El manual oficial no indica el código ni la marca de la bomba. Consultalo con el service oficial de Drean, que trabaja con repuestos genuinos.'),
+('¿Sirve una bomba Emicol para el Drean Concept 5.05 V1?','No lo podemos confirmar: Drean no publica qué bomba lleva el equipo. La compatibilidad tiene que confirmarla el vendedor o el service con tu modelo exacto.'),
+('¿Puedo cambiar la bomba yo?','No conviene. Es una pieza eléctrica dentro del gabinete y, según el manual, la manipulación interna la tiene que hacer el service oficial para tener derecho a la garantía.'),
+('¿Por qué la bomba del lavarropas no para nunca?','El manual no cubre ese caso. Si la bomba arranca sola al enchufar, no compres repuestos: llamá al service.'),
+('¿Dónde está el filtro del Drean Concept 5.05 V1?','El manual describe un filtro de pelusas en el recirculador de agua, dentro de la cuba: se saca destrabándolo desde arriba, se lava bajo la canilla y se vuelve a poner.'),
+('¿Si está en garantía, me cambian la bomba gratis?','El certificado del manual da 12 meses de garantía desde la compra para reparar o reponer piezas con defectos de fabricación, sin cargo. Se anula, entre otros casos, si el equipo fue intervenido por personal ajeno al service autorizado.')])

@@ -9,3 +9,4 @@
 | 2026-10-27 | Servicio técnico oficial Drean (brief 5) | https://codigos-error.onrender.com/servicio-tecnico-drean/ | drean.com.ar/servicio_tecnico, /es_AR/servicio-express, /es_AR/preguntasfrecuentes |
 | 2026-10-27 | Longvie lavarropas error 3 / E03 (brief 2) | https://codigos-error.onrender.com/longvie-lavarropas-error-e03/ | Manual Longvie 13280-V6 (pág. 25 a 27) |
 | 2026-10-27 | Mejoras en las 3 páginas del 23/10: breadcrumb, enlaces cruzados, fecha de revisión, FAQ, schema FAQPage/BreadcrumbList/Article, tablas con scroll en mobile, título BGH de 51 caracteres | (Drean Next, Longvie E20, BGH) | Mismas fuentes + drean.com.ar/servicio_tecnico |
+| 2026-11-03 | Bomba de desagote Drean Concept 5.05 V1 (brief 4) | https://codigos-error.onrender.com/drean-concept-5-05-v1-bomba-de-desagote/ | Manual Drean Concept 5.05 V1 (drean.com.ar/medias, pág. 6-7, 10, 14-15, 18, 21) + drean.com.ar/servicio_tecnico |
