@@ -3,6 +3,29 @@ B="https://codigos-error.onrender.com"
 SITE="Códigos de error · guía independiente"
 FOOT='''<footer><p><strong>Guía independiente.</strong> Este sitio no está afiliado, patrocinado ni avalado por Drean, Longvie, Whirlpool, BGH ni ninguna otra marca. Los nombres y marcas pertenecen a sus dueños. La información se transcribe de manuales y páginas oficiales enlazados en cada página; ante cualquier duda, manda el manual de tu modelo y el service oficial.</p><p>Si el equipo tiene riesgo eléctrico o de gas, no lo abras: llamá a un técnico matriculado o al service oficial.</p></footer>'''
 def fmt(d): y,m,dd=d.split('-'); return f'{dd}/{m}/{y}'
+
+ROOT=os.path.dirname(os.path.abspath(__file__))
+AFF=json.load(open(os.path.join(ROOT,'affiliate_links.json'),encoding='utf-8'))
+NO_AFF=frozenset({'','/','servicio-tecnico-drean/'})
+def aff_href(item):
+    return (item.get('affiliate_url') or '').strip() or item['search_url']
+def aff_block(path):
+    if path and not path.endswith('/'):
+        path=path+'/'
+    if path in NO_AFF:
+        return ''
+    items=AFF.get('pages',{}).get(path) or []
+    if not items:
+        return ''
+    links='\n'.join(
+        f'<li><a href="{html.escape(aff_href(i),quote=True)}" rel="sponsored nofollow noopener" target="_blank">{html.escape(i["text"])}</a></li>'
+        for i in items)
+    disc=html.escape(AFF['disclosure'])
+    return f'<div class="parts">\n<h2>Repuestos relacionados</h2>\n<ul>\n{links}\n</ul>\n<p class="aff">{disc}</p>\n</div>'
+for _p in AFF.get('pages',{}):
+    if _p in NO_AFF or _p.rstrip('/')=='servicio-tecnico-drean' or _p in ('','/'):
+        raise SystemExit(f'affiliate links not allowed on {_p}')
+
 def page(path,title,desc,body,crumb=None,faq=None,pub=None,mod=None):
     url=f'{B}/{path}'
     hdr='<a href="/">'+SITE+'</a>'
@@ -39,6 +62,9 @@ def page(path,title,desc,body,crumb=None,faq=None,pub=None,mod=None):
     d=path.rstrip('/') or '.'
     os.makedirs(d,exist_ok=True)
     open(os.path.join(d,'index.html'),'w').write(h)
+    assert 'google-site-verification' in h and 'DpjskLy1H_29-NI7YUvKYSNKFsn-YUInQMvW47vc6ts' in h, path
+    if path in NO_AFF or path.rstrip('/')=='servicio-tecnico-drean':
+        assert 'class="parts"' not in h and 'mercadolibre.com' not in h.lower() and 'meli.la' not in h.lower(), path
     assert len(title)<=60 or path=='' , (path,len(title))
     print(path or '/',len(title),len(desc))
 
@@ -113,6 +139,7 @@ f'''<h1>Drean Next error 6 (Er 6, E6): qué significa y qué hacer</h1>
 </table>
 <h2>Qué podés revisar vos sin riesgo</h2>
 <p>Para el error 6, nada: el manual deriva al service. Solo en los errores 1, 2, 8 y 9 el manual sugiere una revisión: con el equipo <strong>desenchufado</strong>, revisá que el grifo esté abierto, que las mangueras no estén dobladas y que los filtros de entrada y de desagote estén limpios.</p>
+{aff_block('drean-next-error-6/')}
 <h2>Service oficial Drean</h2>
 <p>Según <a href="{DST}" rel="nofollow">drean.com.ar/servicio_tecnico</a>: <strong>CABA y GBA (011) 5246-8663</strong>, <strong>interior 0800-345-6580</strong>, WhatsApp <strong>11 5023-7973</strong>, de lunes a viernes de 9 a 19:30 y sábados de 9 a 14. Todos los canales, la garantía y qué tener a mano están en <a href="/servicio-tecnico-drean/">servicio técnico oficial Drean</a>.</p>
 <p class="src"><strong>Fuentes (oficiales, drean.com.ar):</strong><br>
@@ -193,6 +220,7 @@ f'''<h1>Lavarropas Longvie error 3 (E03): qué significa y tabla de errores</h1>
 <li>Limpiá el <strong>filtro de la bomba de desagote</strong>: poné un paño en el piso y encima un recipiente bajo, abrí la tapa de la parte inferior del frente, girá el filtro en sentido antihorario hasta que haga tope en posición vertical, sacalo y limpialo. Volvé a colocarlo girando en sentido horario hasta ajustarlo del todo.</li>
 </ol>
 <p>Los mismos pasos, con el resto de los errores, están en <a href="/longvie-lavarropas-error-e20/">limpieza del filtro de la bomba Longvie</a>.</p>
+{aff_block('longvie-lavarropas-error-e03/')}
 <h2>Desagota pero no centrifuga y marca error 3</h2>
 <p>El manual no cubre ese caso. Para "no centrifuga" sin código, el manual menciona solo dos causas: que todavía no terminó de desagotar (esperá unos minutos) o que está activada la exclusión de centrifugado. Si aparece el error 3 aunque el agua salga, no sigas probando: llamá al service.</p>
 <h2>Tabla de errores Longvie (manual 13280-V6)</h2>
@@ -345,6 +373,7 @@ f'''<h1>Bomba de desagote del Drean Concept 5.05 V1: cómo saber si falla y qué
 <li>Que la forma de fijación y el conector sean iguales a los de la pieza original.</li>
 <li>Si es original o alternativa: pedile al vendedor que confirme la compatibilidad con tu modelo exacto.</li>
 </ul>
+{aff_block('drean-concept-5-05-v1-bomba-de-desagote/')}
 <h2>¿La cambio yo o llamo al service?</h2>
 <ul>
 <li><strong>Vos:</strong> revisar la manguera de desagote y limpiar el filtro de pelusas, como indica el manual.</li>
@@ -423,6 +452,7 @@ f'''<h1>Drean Gold Eco: tabla de códigos de error (Err 1 a Err 9) y destellos</
 <p>Según el manual: controlá que la puerta esté bien cerrada y cerrala de nuevo; el error desaparece y el lavarropas empieza el lavado. Si continúa, service.</p>
 <h3>Espuma ("o o" o destello escalonado en los LEDs de centrifugado)</h3>
 <p>El manual dice que dejes que siga el programa: va a hacer un enjuague adicional. En los próximos lavados revisá la dosis de jabón.</p>
+{aff_block('drean-gold-eco-codigos-de-error/')}
 <h2>Destello escalonado en los 3 LEDs de funciones</h2>
 <p>Indica tensión de alimentación fuera de rango (el rango admisible es de 180 V a 245 V). El manual indica comunicarse con el Servicio de Asistencia Técnica y no trae un reset. Tené en cuenta que el certificado de garantía excluye los daños por excesos o caídas de tensión eléctrica.</p>
 <h2>Cuándo llamar al service</h2>
@@ -507,6 +537,7 @@ f'''<h1>Drean LCFDR: qué significan CLR FLTR, E2 y E4, y tabla de códigos</h1>
 <li>Sacá el filtro con una pinza de punta plana y limpialo.</li>
 <li>Volvé a conectar la manguera haciendo lo mismo a la inversa.</li>
 </ol>
+{aff_block('drean-lcfdr-clr-fltr-codigos-de-error/')}
 <h2>Cuándo llamar al service</h2>
 <ul>
 <li><strong>Vos:</strong> CLR FLTR, E2 y E4, solo con las revisiones del manual, y las comprobaciones sin código que no exigen abrir el gabinete.</li>
@@ -587,6 +618,7 @@ f'''<h1>Whirlpool WCS60ZB: qué significan FA, F09, Fod y «limpie la bomba»</h
 <p>Pulsá «Cancelar/Vaciado» al menos 3 segundos y esperá a que se encienda el indicador de «Puerta abierta». Abrí la tapa, cerrá las solapas del tambor y volvé a seleccionar e iniciar el programa. Si persiste, service.</p>
 <h3>F09 y F02 a F35</h3>
 <p>Pulsá «Cancelar/Vaciado» al menos 3 segundos. Si el error persiste, el manual indica desconectar el aparato, cerrar el grifo y contactar al Servicio Postventa.</p>
+{aff_block('whirlpool-wcs60zb-codigos-de-error/')}
 <h2>Cuándo llamar al service Whirlpool Argentina</h2>
 <p>Antes de llamar, el manual (pág. 18) pide probar las recomendaciones de resolución de problemas y apagar y volver a encender el aparato. Llamá si el error persiste después de eso, si en un FA el agua entra sola al abrir el grifo, si hay que cambiar la manguera con ventana roja o para cualquier reparación interna. El manual dice que no hagas reparaciones ni sustituciones que no estén indicadas en él.</p>
 <p>Según <a href="{WST}" rel="nofollow">whirlpool.com.ar/servicio-tecnico</a>, la línea gratuita de atención al consumidor es el <strong>0800-666-6266</strong>. Sobre el horario, el sitio oficial muestra dos datos distintos: "Lunes a Viernes de 9 a 18hs" en <a href="{WAC}" rel="nofollow">Atención al Cliente</a> y "Lunes a Sábado de 9 a 19 hs." en el pie de página; confirmalo al llamar. La garantía figura en la cartilla que viene con el equipo; el manual no la transcribe. El manual también menciona whirlpool.eu: para Argentina, usá los canales de whirlpool.com.ar.</p>

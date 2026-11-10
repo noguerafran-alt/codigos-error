@@ -1,0 +1,78 @@
+{
+  "disclosure": "Algunos enlaces son de afiliado de Mercado Libre: si comprás, el sitio puede recibir una comisión sin costo extra para vos.",
+  "notes": "affiliate_url queda vacío hasta tener el tag o el enlace meli.la de Francisco. Si está vacío o ausente, build.py usa search_url. No inventar el ID.",
+  "pages": {
+    "drean-next-error-6/": [
+      {
+        "text": "Filtro de desagote Drean Next",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-desagote-drean-next",
+        "affiliate_url": ""
+      },
+      {
+        "text": "Filtro de entrada de agua Drean Next",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-entrada-agua-drean-next",
+        "affiliate_url": ""
+      }
+    ],
+    "longvie-lavarropas-error-e03/": [
+      {
+        "text": "Filtro de bomba de desagote Longvie",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-bomba-desagote-longvie",
+        "affiliate_url": ""
+      },
+      {
+        "text": "Filtro de electroválvula Longvie",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-electrovalvula-longvie",
+        "affiliate_url": ""
+      }
+    ],
+    "drean-concept-5-05-v1-bomba-de-desagote/": [
+      {
+        "text": "Bomba de desagote para Drean Concept 5.05 V1",
+        "search_url": "https://listado.mercadolibre.com.ar/bomba-desagote-drean-concept",
+        "affiliate_url": ""
+      }
+    ],
+    "drean-gold-eco-codigos-de-error/": [
+      {
+        "text": "Filtro de electrobomba de desagote Drean Gold Eco",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-bomba-desagote-drean-gold",
+        "affiliate_url": ""
+      },
+      {
+        "text": "Filtro de ingreso de agua Drean Gold Eco",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-entrada-agua-drean-gold",
+        "affiliate_url": ""
+      },
+      {
+        "text": "Electroválvula para Drean Gold Eco",
+        "search_url": "https://listado.mercadolibre.com.ar/electrovalvula-drean-gold",
+        "affiliate_url": ""
+      }
+    ],
+    "drean-lcfdr-clr-fltr-codigos-de-error/": [
+      {
+        "text": "Filtro de bomba de desagote Drean LCFDR",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-bomba-desagote-drean-lcfdr",
+        "affiliate_url": ""
+      },
+      {
+        "text": "Filtro de ingreso de agua Drean LCFDR",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-entrada-agua-drean-lcfdr",
+        "affiliate_url": ""
+      }
+    ],
+    "whirlpool-wcs60zb-codigos-de-error/": [
+      {
+        "text": "Filtro de bomba para Whirlpool WCS60ZB",
+        "search_url": "https://listado.mercadolibre.com.ar/filtro-bomba-whirlpool-wcs60zb",
+        "affiliate_url": ""
+      },
+      {
+        "text": "Manguera de entrada de agua Whirlpool",
+        "search_url": "https://listado.mercadolibre.com.ar/manguera-entrada-agua-whirlpool",
+        "affiliate_url": ""
+      }
+    ]
+  }
+}
