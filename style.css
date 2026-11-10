@@ -14,3 +14,8 @@ ul.cards li{margin:.5em 0}
 .tw table{min-width:520px;margin:0}
 .crumb{font-size:.9em}
 .rev{font-size:.85em;color:#555;margin:.2em 0 1em}
+
+.parts{background:#fff;border:1px solid #ddd;padding:10px 14px;margin:1.4em 0}
+.parts h2{margin-top:0;font-size:1.1rem}
+.parts ul{margin:.4em 0 .8em}
+.aff{font-size:.85rem;color:#555;margin:0}
